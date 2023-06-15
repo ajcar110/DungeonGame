@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2bx2k1s7xo6n"]
+
+[ext_resource type="Script" path="res://Map.gd" id="1_1e6wg"]
+[ext_resource type="PackedScene" uid="uid://dgu87cisj43wq" path="res://map_creator.tscn" id="2_fqab2"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_1e6wg")
+
+[node name="MapCreator" parent="." instance=ExtResource("2_fqab2")]
+layer_0/tile_data = PackedInt32Array(0, 1, 0, -65536, 1, 0, -1, 1, 0, 65535, 1, 0, -65535, 1, 0, 1, 1, 0, -65534, 1, 0, 2, 1, 0, -589825, 1, 0, -524289, 1, 0, -458753, 1, 0, -393217, 1, 0, -327681, 1, 0, -262145, 1, 0, -196609, 1, 0, -131073, 1, 0, -65537, 1, 0, -655360, 1, 0, -589824, 1, 0, -524288, 1, 0, -458752, 1, 0, -393216, 1, 0, -327680, 1, 0, -262144, 1, 0, -196608, 1, 0, -131072, 1, 0, -262143, 1, 0)

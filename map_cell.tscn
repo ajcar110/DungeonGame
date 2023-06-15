@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7btk23njj7jk"]
+
+[ext_resource type="Script" path="res://Map_Cell.gd" id="1_xa6ui"]
+[ext_resource type="Material" uid="uid://b3sm7b52h2byb" path="res://FloorMat.tres" id="2_hic5e"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tqb0t"]
+material = ExtResource("2_hic5e")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l2ebu"]
+
+[node name="MapCell" type="Area3D"]
+script = ExtResource("1_xa6ui")
+
+[node name="TopFace" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 2, 0)
+material_override = ExtResource("2_hic5e")
+mesh = SubResource("PlaneMesh_tqb0t")
+
+[node name="NorthFace" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, -1)
+material_override = ExtResource("2_hic5e")
+mesh = SubResource("PlaneMesh_tqb0t")
+
+[node name="WestFace" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -1, 1, 0)
+mesh = SubResource("PlaneMesh_tqb0t")
+
+[node name="EastFace" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 1, 1, 0)
+material_override = ExtResource("2_hic5e")
+mesh = SubResource("PlaneMesh_tqb0t")
+
+[node name="SouthFace" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 1, 1)
+mesh = SubResource("PlaneMesh_tqb0t")
+
+[node name="BottomFace" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_hic5e")
+mesh = SubResource("PlaneMesh_tqb0t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_l2ebu")

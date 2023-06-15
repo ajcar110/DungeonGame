@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgu87cisj43wq"]
+
+[ext_resource type="Texture2D" uid="uid://xi0op46vuubr" path="res://Assets/Textures/Ground_inner.png" id="1_78c8g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_363bu"]
+texture = ExtResource("1_78c8g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xiltn"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_363bu")
+
+[node name="MapCreator" type="TileMap"]
+tile_set = SubResource("TileSet_xiltn")
+format = 2
