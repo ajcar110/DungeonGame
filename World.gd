@@ -3,21 +3,17 @@ extends Node3D
 const Cell = preload("res://map_cell.tscn")
 
 @export var Map: PackedScene
-
+@export var borders = Rect2(1, 1, 23, 23)
 var cells = []
 
 func _ready():
-#	var environment = get_tree().root.World.fallback_environment
-#	environment.background_mode = Environment.BG_COLOR
-#	environment.background_color = Color.BLACK
-#	environment.ambient_light_color = Color("432d6d")
-#	environment.dof_blur_far_enabled = true
-#	environment.dof_blur_near_enabled = true
+	randomize()
 	generate_map()
 
 func generate_map():
 	if not Map is PackedScene: return
 	var map = Map.instantiate()
+	map.generate_level(borders)
 	var tileMap = map.get_tilemap()
 	var used_tiles = tileMap.get_used_cells(0)
 	map.free() # We don't need it now that we have the tile data
@@ -28,4 +24,4 @@ func generate_map():
 		cells.append(cell)
 	for cell in cells:
 		cell.update_faces(used_tiles)
-	print("Cell_List: " + str(used_tiles))
+#	print("Cell_List: " + str(used_tiles))

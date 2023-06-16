@@ -7,5 +7,6 @@
 [node name="World" type="Node3D"]
 script = ExtResource("1_q1mcm")
 Map = ExtResource("2_lk40n")
+borders = Rect2(-15, -15, 55, 25)
 
 [node name="Player" parent="." instance=ExtResource("2_l5yaq")]
