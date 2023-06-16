@@ -9,9 +9,9 @@ class_name Cell
 @onready var bottomFace: = $BottomFace
 
 func update_faces(cell_list) -> void:
+	@warning_ignore("narrowing_conversion")
 	var my_grid_position = Vector2i(position.x/Globals.GRID_SIZE, position.z/2)
 	if cell_list.has(my_grid_position + Vector2i.RIGHT):
-		print("hey")
 		eastFace.queue_free()
 	if cell_list.has(my_grid_position + Vector2i.LEFT):
 		westFace.queue_free()
